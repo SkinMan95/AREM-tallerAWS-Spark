@@ -13,11 +13,23 @@ import static spark.Spark.*;
 public class SparkApplication {
 
     public static final String BASE_AWS_URL = "https://mk5h44s7ye.execute-api.us-west-2.amazonaws.com/prod";
-
+    public static final int DEFAULT_PORT = 8080;
+    
+    public static int port = DEFAULT_PORT;
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        try {
+            port = new Integer(System.getenv("PORT"));
+        } catch (Exception ex) {
+            System.err.println("ERROR: " + ex + " using default address (" + DEFAULT_PORT + ")");
+            port = DEFAULT_PORT;
+        }
+        
+        port(port);
+        
         staticFileLocation("/public");
         get("/getSquare", (request, response) -> {
             // response.type("application/json");
