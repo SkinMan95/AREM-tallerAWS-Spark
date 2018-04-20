@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link href="/css/css.css" rel="stylesheet">
+    <title>AREM taller AWS Gateway/Lambda Spark</title>
+  </head>
+  <body onload="SquareModule.init();">
+    <h1> AREM taller AWS Gateway/Lambda Spark </h1>
+    <p> Ingrese un numero para calcular el cuadrado </p>
+    <div>
+      <label for="tnum">Numero</label>
+      <input type="text" id="tnum" name="numero">
+      <label for="lname">Numero al cuadrado</label>
+      <input type="text" id="cnum" name="respuesta">
+      <button id="squareButton" class="button">Calcular</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/SquareController.js"></script>
+  </body>
+</html>
